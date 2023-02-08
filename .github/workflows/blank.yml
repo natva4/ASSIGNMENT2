@@ -1,0 +1,22 @@
+# This is a basic workflow to help you get started with Actions
+
+name: Email Notification
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Send mail
+      uses: dawidd6/action-send-mail@v3
+      with:
+        connection_url: smtp://natva4@gmail.com:jmnnwydlueshxaai@smtp.gmail.com:587
+        subject: Github Assingment
+        to: nvargasandaluz1@babson.edu
+        from: Natalia Vargas <natva4@gmail.com>
+        body: Build job of ${{github.repository}} completed successfully!
